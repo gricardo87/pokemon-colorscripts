@@ -69,7 +69,7 @@ _show_random_pokemon(){
     echo $random_pokemon
 
     # print out the pokemon art for the pokemon
-    cat "$POKEART_DIR/$random_pokemon.txt"
+    gunzip -c "$POKEART_DIR/$random_pokemon.txt.gz"
 }
 
 _get_end_index(){
@@ -99,7 +99,7 @@ _show_pokemon_by_name(){
     pokemon_name=$1
     echo $pokemon_name
     # Error handling. Can't think of a better way to do it
-    cat "$POKEART_DIR/$pokemon_name.txt" 2>/dev/null || echo "Invalid pokemon"
+    gunzip -c "$POKEART_DIR/$pokemon_name.txt.gz" 2>/dev/null || echo "Invalid pokemon"
 }
 
 _list_pokemon_names(){
