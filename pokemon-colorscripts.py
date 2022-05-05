@@ -7,9 +7,11 @@ import sys
 
 PROGRAM = os.path.realpath(__file__)
 PROGRAM_DIR = os.path.dirname(PROGRAM)
-POKEART_DIR = f"{PROGRAM_DIR}/colorscripts"
-POKEART_REGULAR_DIR = f"{POKEART_DIR}/regular"
-POKEART_SHINY_DIR = f"{POKEART_DIR}/shiny"
+COLORSCRIPTS_DIR = f"{PROGRAM_DIR}/colorscripts"
+
+REGULAR_SUBDIR = "regular"
+SHINY_SUBDIR = "shiny"
+
 SHINY_RATE = 1 / 128
 GENERATIONS = {
     "1": (1, 151),
@@ -32,13 +34,14 @@ def list_pokemon_names() -> None:
     print_file(f"{PROGRAM_DIR}/nameslist.txt")
 
 
-def show_pokemon_by_name(name: str, title: bool, shiny: bool) -> None:
-    base_path = POKEART_SHINY_DIR if shiny else POKEART_REGULAR_DIR
-    pokemon = f"{base_path}/{name}.txt"
+def show_pokemon_by_name(name: str, show_title: bool, shiny: bool) -> None:
+    base_path = COLORSCRIPTS_DIR
+    color_subdir = SHINY_SUBDIR if shiny else REGULAR_SUBDIR
+    pokemon = f"{base_path}/{color_subdir}/{name}.txt"
     if not os.path.isfile(pokemon):
         print(f"Invalid pokemon '{name}'")
         sys.exit(1)
-    if title:
+    if show_title:
         if shiny:
             print(f"{name} (shiny)")
         else:
@@ -46,7 +49,7 @@ def show_pokemon_by_name(name: str, title: bool, shiny: bool) -> None:
     print_file(pokemon)
 
 
-def show_random_pokemon(generations: str, title: bool, shiny: bool) -> None:
+def show_random_pokemon(generations: str, show_title: bool, shiny: bool) -> None:
     # Generation list
     if len(generations.split(",")) > 1:
         input_gens = generations.split(",")
@@ -71,7 +74,7 @@ def show_random_pokemon(generations: str, title: bool, shiny: bool) -> None:
         # pokemon to be shiny. If the flag is set, always show shiny
         if not shiny:
             shiny = random.random() <= SHINY_RATE
-        show_pokemon_by_name(random_pokemon, title, shiny)
+        show_pokemon_by_name(random_pokemon, show_title, shiny)
     except KeyError:
         print(f"Invalid generation '{generations}'")
         sys.exit(1)
