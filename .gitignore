@@ -5,12 +5,6 @@ __pycache__
 # ignore mypy files
 .mypy_cache
 
-# ignore sprites folder
-images
-
-# ignore testing files
-test_*
-
 # ignoring package source info files
 .SRCINFO
 

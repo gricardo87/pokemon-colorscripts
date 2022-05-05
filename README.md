@@ -141,11 +141,7 @@ The program is located at usr/local/opt/pokemon-colorscripts/ with the script be
 ## How it works
 The program itself is a simple python script that prints out text files corresponding
 to the relevant pokemon or a randomly selected pokemon. The textfiles formatted with
-appropriate colors can be found in the *colorscripts* folder. The sprites
-were taken from [pokemondb](https://pokemondb.net/sprites) and were converted into text
-files using a custom python script after some preprocessing. A simple script to
-scrape and download all the sprites, and a python script to convert these sprites into properly formatted and colored
-text files, they are also included in the repo and can be found in the *generator_scripts* folder.
+appropriate colors can be found in the *colorscripts* folder. 
 
 ## Similar projects
 `pokemon-colorscripts` is not the exclusive nor the first program to print out
