@@ -71,20 +71,21 @@ Which should print out the help page for the program
 You can run the program from the command line to either display a pokemon of your
 choice by specifying the pokemon name or make it display a random pokemon.
 ```
-Usage: pokemon-colorscripts [OPTION] [POKEMON NAME]
-Options:
-      -h, --help            Show this help message and exit
-      -l, --list            Print list of all pokemon
-      -n NAME, --name NAME  Select pokemon by name. Generally spelled like in the games. a few exceptions are nidoran-f, nidoran-m, mr-mime, farfetchd,
-                            flabebe type-null etc. Perhaps grep the output of --list if in doubt.
-      --no-title            Do not display pokemon name
-      -s, --shiny           Show the shiny version of the pokemon instead
-      -r [RANDOM], --random [RANDOM]
-                            Show a random pokemon. This flag can optionally be followed by a generation number or range (1-8) to show random pokemon from
-                            a specific generation or range of generations. The generations can be provided as a continuous range (eg. 1-3) or as a list of
-                            generations (1,3,6)
+usage: pokemon-colorscripts [OPTION] [POKEMON NAME]
 
+CLI utility to print out unicode image of a pokemon in your shell
 
+optional arguments:
+  -h, --help            Show this help message and exit
+  -l, --list            Print list of all pokemon
+  -n NAME, --name NAME  Select pokemon by name. Generally spelled like in the games. a few exceptions are nidoran-f, nidoran-m, mr-mime, farfetchd, flabebe type-null etc.
+                        Perhaps grep the output of --list if in doubt.
+  --no-title            Do not display pokemon name
+  -s, --shiny           Show the shiny version of the pokemon instead
+  -b, --big             Show a larger version of the sprite
+  -r [RANDOM], --random [RANDOM]
+                        Show a random pokemon. This flag can optionally be followed by a generation number or range (1-8) to show random pokemon from a specific generation or range of generations.
+                        The generations can be provided as a continuous range (eg. 1-3) or as a list of generations (1,3,6)
 ```
 
 Example of printing out a specific pokemon
@@ -110,6 +111,10 @@ pokemon-colorscripts -r 1-3
 Example of printing out a random pokemon from generations 1,3 and 6
 ```
 pokemon-colorscripts -r 1,3,6
+```
+Example of printing out a larger sprite 
+```
+pokemon-colorscripts -n sphleal -b
 ```
 Some pokemon with spaces or periods or other special characters in their name
 might not be spelled as expected, some examples include:
