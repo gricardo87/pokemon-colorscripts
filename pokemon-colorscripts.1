@@ -7,42 +7,48 @@ pokemon-colorscripts - display unicode sprites of pokemon in the terminal
 .SH "SYNOPSIS"
 .PP
 .B pokemon-colorscripts
-.RB [-h|--help|help]
-.RB [-l|--list|list]
-.RB [-r|--random|random
+.RB [-h|--help]
+.RB [-l|--list]
+.RB [-r|--random
 .IR generation ]
 .RB [-n|--name
 .IR name
 .RB [-s|--shiny]]
+.RB [--no-title]]
 
 .SH "DESCRIPTION"
 .PP
 Pokemon-colorscripts is a CLI utility written in shell script that prints out
 unicode sprites of pokemon to the terminal. Almost all pokemon generations 1-8
-are available (except may be shiny pokemon or different forms). You can select
+are available (except different forms). You can select
 specific pokemon to be printed out by name or let the script choose a pokemon
 randomly. While choosing randomly you can also filter by generation.
 
 .SH "OPTIONS"
 .TP
-.B "-h, --help, help"
+.B "-h, --help"
 Print help.
 .TP
-.B "-l, --list, list"
+.B "-l, --list"
 List all available pokemon.
 .TP
-\fB -r, --random, random\fR \fI generation\fR
+\fB -r, --random \fI generation\fR
 Select a pokemon at random and print it out. Can be followed by an optional
 generation number or range 1-8 to print out random pokemon from a specific
 generation or range of generations.
 If no generation is specified, selects from full list of available pokemon.
 .TP
-\fB -n, --name\fR \fI name\fR -s, --shiny
+\fB -n, --name\fR \fI name\fR
 Select a specific pokemon to print out by name. Most pokemon are spelled as
 expected. A few pokemon with some special characters in their names might be spelled
 slightly differently. Examples nidoran-f,nidoran-m,farfetchd,mr-mime etc. You can
-check the output of the\fB list\fR option if in doubt. This flag can optionally be
-followed by -s or --shiny to print the shiny version of the pokemon instead"
+check the output of the\fB list\fR option if in doubt.
+.TP
+\fB -s, --shiny\fR
+Show the shiny version of the pokemon instead
+.TP
+\fB --no-title\fR
+Do not display pokemon name
 
 .SH "FILES"
 .TP
@@ -63,7 +69,7 @@ Print out a random pokemon from generation 1.
 .SS "pokemon-colorscripts -r 1-3"
 .PP
 Print out a random pokemon from generations 1-3.
-.SS "pokemon-colorscripts -r 1 3 6"
+.SS "pokemon-colorscripts -r 1,3,6"
 .PP
 Print out a random pokemon from generations 1,3 or 6.
 .SS "pokemon-colorscripts -l"

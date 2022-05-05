@@ -27,10 +27,10 @@ package() {
     install -Dm644 colorscripts/regular/* -t "$pkgdir/usr/local/opt/$_pkgname/colorscripts/regular"
     install -Dm644 colorscripts/shiny/* -t "$pkgdir/usr/local/opt/$_pkgname/colorscripts/shiny"
     install -Dm644 nameslist.txt "$pkgdir/usr/local/opt/$_pkgname/nameslist.txt"
-    install -Dm755 pokemon-colorscripts.sh "$pkgdir/usr/local/opt/$_pkgname/pokemon-colorscripts.sh"
+    install -Dm755 pokemon-colorscripts.py "$pkgdir/usr/local/opt/$_pkgname/pokemon-colorscripts.py"
     install -Dm644 LICENSE.txt "$pkgdir/usr/share/licenses/$_pkgname/LICENSE"
     install -Dm644 README.md "$pkgdir/usr/share/doc/$_pkgname/README.md"
     install -Dm644 pokemon-colorscripts.1 "$pkgdir/usr/local/man/man1/pokemon-colorscripts.1"
     # creating symlink in usr/local/bin
-    ln -sf "/usr/local/opt/$_pkgname/pokemon-colorscripts.sh" "$pkgdir/usr/local/bin/pokemon-colorscripts"
+    ln -sf "/usr/local/opt/$_pkgname/pokemon-colorscripts.py" "$pkgdir/usr/local/bin/pokemon-colorscripts"
 }
