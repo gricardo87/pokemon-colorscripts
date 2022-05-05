@@ -46,7 +46,7 @@ def show_pokemon_by_name(name: str, title: bool, shiny: bool) -> None:
     print_file(pokemon)
 
 
-def show_random_pokemon(generations: str, title: bool) -> None:
+def show_random_pokemon(generations: str, title: bool, shiny: bool) -> None:
     # Generation list
     if len(generations.split(",")) > 1:
         input_gens = generations.split(",")
@@ -67,7 +67,10 @@ def show_random_pokemon(generations: str, title: bool) -> None:
         end_idx = GENERATIONS[end_gen][1]
         random_idx = random.randint(start_idx, end_idx)
         random_pokemon = pokemon[random_idx - 1]
-        shiny = random.random() <= SHINY_RATE
+        # if the shiny flag is not passed, set a small random chance for the
+        # pokemon to be shiny. If the flag is set, always show shiny
+        if not shiny:
+            shiny = random.random() <= SHINY_RATE
         show_pokemon_by_name(random_pokemon, title, shiny)
     except KeyError:
         print(f"Invalid generation '{generations}'")
@@ -127,7 +130,7 @@ def main(arguments) -> None:
     elif args.name:
         show_pokemon_by_name(args.name, args.no_title, args.shiny)
     elif args.random:
-        show_random_pokemon(args.random, args.no_title)
+        show_random_pokemon(args.random, args.no_title, args.shiny)
     else:
         parser.print_help()
 
