@@ -27,12 +27,8 @@ Demo of the program running on terminal startup.
 ![screenshot](./demo_images/demo_3.png)
 
 ## Requirements
-The program itself is just a shell script that prints out custom color formatted
-text files. So as long as you have a POSIX compliant shell like dash, bash, zsh etc.
-as your shell and have coreutils (might not be present on your system if using
-MacOs. See installation instructions for MacOS for more details), the script should work.
-You will however need a terminal with true color support, which most
-modern terminals have. More on terminals and color support can be found in
+The program requires `python3` to run and a terminal with true color support,
+which most modern terminals have. More on terminals and color support can be found in
 [this gist](https://gist.github.com/XVilka/8346728)
 
 ## Installation
@@ -55,7 +51,7 @@ Or you can use an AUR Helper such as yay and run
 yay -S pokemon-colorscripts-git
 ```
 
-### On other distros
+### On other distros and MacOS
 Clone or download the repository
 ```
 git clone https://gitlab.com/phoneybadger/pokemon-colorscripts.git
@@ -65,30 +61,6 @@ git clone https://gitlab.com/phoneybadger/pokemon-colorscripts.git
 cd pokemon-colorscripts
 sudo ./install.sh
 ```
-Now the program should be installed. You can check this by running
-```
-pokemon-colorscripts
-```
-Which should print out the help page for the program
-
-### MacOS
-
-Make sure coreutils are installed
-```sh
-brew install coreutils
-```
-
-Clone or download the repository
-```
-git clone https://gitlab.com/phoneybadger/pokemon-colorscripts.git
-```
-`cd` into the directory and run the install script
-```
-cd pokemon-colorscripts
-sudo ./install.sh
-```
-
-Restart the terminal.
 Now the program should be installed. You can check this by running
 ```
 pokemon-colorscripts
@@ -167,7 +139,7 @@ A more advaced setup combining multiple colorscripts can be found on pokemon-col
 The program is located at usr/local/opt/pokemon-colorscripts/ with the script being symlinked to /usr/local/bin/
 
 ## How it works
-The program itself is a simple shell script that prints out text files corresponding
+The program itself is a simple python script that prints out text files corresponding
 to the relevant pokemon or a randomly selected pokemon. The textfiles formatted with
 appropriate colors can be found in the *colorscripts* folder. The sprites
 were taken from [pokemondb](https://pokemondb.net/sprites) and were converted into text
@@ -181,8 +153,6 @@ pokemon sprites to the terminal. You can check out these really cool projects as
 well
 - [pokeget](https://github.com/talwat/pokeget)
 - [pokeshell](https://github.com/acxz/pokeshell)
-
-more details and my thoughts on both projects can be found on [similar_projects.md](./similar_projects.md)
 
 ## Author
 Phoney badger:

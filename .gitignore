@@ -1,8 +1,9 @@
-# ignore virtual env
-mon
-
 # ignore any bytecode files
 *.pyc
+__pycache__
+
+# ignore mypy files
+.mypy_cache
 
 # ignore sprites folder
 images
@@ -12,3 +13,6 @@ test_*
 
 # ignoring package source info files
 .SRCINFO
+
+# ignore python venv
+.venv
