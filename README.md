@@ -146,7 +146,10 @@ The program is located at usr/local/opt/pokemon-colorscripts/ with the script be
 ## How it works
 The program itself is a simple python script that prints out text files corresponding
 to the relevant pokemon or a randomly selected pokemon. The textfiles formatted with
-appropriate colors can be found in the *colorscripts* folder. 
+appropriate colors can be found in the *colorscripts* folder. The files were generated
+using sprites taken from [PokéSprite](https://msikma.github.io/pokesprite/) as the
+base and converted to unicode sprites using custom scripts that can be found in
+[this repo](https://gitlab.com/phoneybadger/pokemon-generator-scripts)
 
 ## Similar projects
 `pokemon-colorscripts` is not the exclusive nor the first program to print out
@@ -154,6 +157,10 @@ pokemon sprites to the terminal. You can check out these really cool projects as
 well
 - [pokeget](https://github.com/talwat/pokeget)
 - [pokeshell](https://github.com/acxz/pokeshell)
+
+## Credits
+- All the pokemon designs, names, branding etc. are trademarks of [Nintendo™](https://www.nintendo.com/)
+- The box art sprites were taken from the amazing [PokéSprite](https://msikma.github.io/pokesprite/) database
 
 ## Author
 Phoney badger:
