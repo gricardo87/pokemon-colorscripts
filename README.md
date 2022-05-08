@@ -169,9 +169,12 @@ well
 - [pokeget](https://github.com/talwat/pokeget)
 - [pokeshell](https://github.com/acxz/pokeshell)
 - [krabby](https://github.com/yannjor/krabby)
+
 An older more minimal shell script version of the project is now being maintained
 as
-- [pokescript] (https://github.com/acxz/pokescript)
+
+- [pokescript](https://github.com/acxz/pokescript)
+
 a much more comprehensive comparison of the different projects can be found on
 the [Pokeshell Readme](https://github.com/acxz/pokeshell#similar-projects)
 
