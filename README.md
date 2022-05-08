@@ -67,6 +67,17 @@ pokemon-colorscripts
 ```
 Which should print out the help page for the program
 
+### Uninstall
+To uninstall the program you can run the uninstall script. Make the script
+executable if it already isn't
+```
+chmod +x ./uninstall.sh
+```
+and run the script
+```
+sudo ./uninstall.sh
+```
+
 ## Usage
 You can run the program from the command line to either display a pokemon of your
 choice by specifying the pokemon name or make it display a random pokemon.
