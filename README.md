@@ -168,6 +168,12 @@ pokemon sprites to the terminal. You can check out these really cool projects as
 well
 - [pokeget](https://github.com/talwat/pokeget)
 - [pokeshell](https://github.com/acxz/pokeshell)
+- [krabby](https://github.com/yannjor/krabby)
+An older more minimal shell script version of the project is now being maintained
+as
+- [pokescript] (https://github.com/acxz/pokescript)
+a much more comprehensive comparison of the different projects can be found on
+the [Pokeshell Readme](https://github.com/acxz/pokeshell#similar-projects)
 
 ## Credits
 - All the pokemon designs, names, branding etc. are trademarks of [Nintendo™](https://www.nintendo.com/)
