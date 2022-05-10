@@ -123,7 +123,7 @@ Example of printing out a random pokemon from generations 1,3 and 6
 ```
 pokemon-colorscripts -r 1,3,6
 ```
-Example of printing out a larger sprite 
+Example of printing out a larger sprite
 ```
 pokemon-colorscripts -n sphleal -b
 ```
@@ -156,8 +156,9 @@ The program is located at usr/local/opt/pokemon-colorscripts/ with the script be
 
 ## How it works
 The program itself is a simple python script that prints out text files corresponding
-to the relevant pokemon or a randomly selected pokemon. The textfiles formatted with
-appropriate colors can be found in the *colorscripts* folder. The files were generated
+to the relevant pokemon or a randomly selected pokemon. The sprites are simple text
+files that use unicode characters and ANSI color codes to display images of pokemon.
+The text sprite files can be found in the *colorscripts* folder. The files were generated
 using sprites taken from [PokéSprite](https://msikma.github.io/pokesprite/) as the
 base and converted to unicode sprites using custom scripts that can be found in
 [this repo](https://gitlab.com/phoneybadger/pokemon-generator-scripts)
@@ -179,7 +180,7 @@ a much more comprehensive comparison of the different projects can be found on
 the [Pokeshell Readme](https://github.com/acxz/pokeshell#similar-projects)
 
 ## Credits
-- All the pokemon designs, names, branding etc. are trademarks of [Nintendo™](https://www.nintendo.com/)
+- All the pokemon designs, names, branding etc. are trademarks of [The Pokémon Company](https://pokemon.com)
 - The box art sprites were taken from the amazing [PokéSprite](https://msikma.github.io/pokesprite/) database
 
 ## Author
