@@ -1,7 +1,7 @@
 # Maintainer: Phoney Badger <badgerphoney at gmail dot com>
 pkgname=pokemon-colorscripts-git
 _pkgname=pokemon-colorscripts
-pkgver=r83.ae8a862
+pkgver=r97.da8cf00
 pkgrel=1
 pkgdesc="CLI utility that prints unicode sprites of pokemon to the terminal"
 arch=('any')
