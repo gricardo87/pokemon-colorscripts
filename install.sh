@@ -14,7 +14,7 @@ mkdir -p $INSTALL_DIR/pokemon-colorscripts || return 1
 # moving all the files to appropriate locations
 cp -rf colorscripts $INSTALL_DIR/pokemon-colorscripts
 cp pokemon-colorscripts.py $INSTALL_DIR/pokemon-colorscripts
-cp nameslist.txt $INSTALL_DIR/pokemon-colorscripts
+cp pokemon.json $INSTALL_DIR/pokemon-colorscripts
 
 # create symlink in usr/bin
 rm -rf "$BIN_DIR/pokemon-colorscripts" || return 1

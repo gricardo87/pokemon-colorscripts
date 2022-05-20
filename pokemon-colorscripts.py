@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import argparse
+import json
 import os
 import random
 import sys
@@ -34,7 +35,10 @@ def print_file(filepath: str) -> None:
 
 
 def list_pokemon_names() -> None:
-    print_file(f"{PROGRAM_DIR}/nameslist.txt")
+    with open(f"{PROGRAM_DIR}/pokemon.json") as file:
+        pokemon_json = json.load(file)
+        for pokemon in pokemon_json:
+            print(pokemon["name"])
 
 
 def show_pokemon_by_name(
@@ -45,16 +49,19 @@ def show_pokemon_by_name(
     # default to smaller size as this makes sense for most font size + terminal
     # size combinations
     size_subdir = LARGE_SUBDIR if is_large else SMALL_SUBDIR
-    pokemon = f"{base_path}/{size_subdir}/{color_subdir}/{name}"
-    if not os.path.isfile(pokemon):
-        print(f"Invalid pokemon '{name}'")
-        sys.exit(1)
+    with open(f"{PROGRAM_DIR}/pokemon.json") as file:
+        pokemon_json = json.load(file)
+        pokemon_names = {pokemon["name"] for pokemon in pokemon_json}
+        if name not in pokemon_names:
+            print(f"Invalid pokemon {name}")
+            sys.exit(1)
+    pokemon_file = f"{base_path}/{size_subdir}/{color_subdir}/{name}"
     if show_title:
         if shiny:
             print(f"{name} (shiny)")
         else:
             print(name)
-    print_file(pokemon)
+    print_file(pokemon_file)
 
 
 def show_random_pokemon(
@@ -73,8 +80,8 @@ def show_random_pokemon(
         start_gen = generations
         end_gen = start_gen
 
-    with open(f"{PROGRAM_DIR}/nameslist.txt", "r") as f:
-        pokemon = [l.strip() for l in f.readlines()]
+    with open(f"{PROGRAM_DIR}/pokemon.json", "r") as file:
+        pokemon = [pokemon["name"] for pokemon in json.load(file)]
     try:
         start_idx = GENERATIONS[start_gen][0]
         end_idx = GENERATIONS[end_gen][1]
