@@ -90,7 +90,7 @@ def show_random_pokemon(
         sys.exit(1)
 
 
-def main(arguments) -> None:
+def main() -> None:
     parser = argparse.ArgumentParser(
         prog="pokemon-colorscripts",
         description="CLI utility to print out unicode image of a pokemon in your shell",
@@ -144,7 +144,7 @@ def main(arguments) -> None:
                 or as a list of generations (1,3,6)""",
     )
 
-    args = parser.parse_args(arguments)
+    args = parser.parse_args()
 
     if args.list:
         list_pokemon_names()
@@ -157,4 +157,4 @@ def main(arguments) -> None:
 
 
 if __name__ == "__main__":
-    main(sys.argv[1:])
+    main()
