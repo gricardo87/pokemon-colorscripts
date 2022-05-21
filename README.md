@@ -9,7 +9,7 @@ A script to print out images of pokemon to the terminal. Inspired by
 ## Description
 Prints out colored unicode sprites of pokemon onto your terminal. Contains
 almost 900 pokemon from gen 1 to gen 8. Has all the pokemons you could ever want, including shinies
-(okay it doesn't have the different forms, but cut me some slack)
+and alternate forms (okay it's still missing some female forms but cut me some slack).
 
 ## Visuals
 ### Demo GIFs
@@ -89,14 +89,16 @@ CLI utility to print out unicode image of a pokemon in your shell
 optional arguments:
   -h, --help            Show this help message and exit
   -l, --list            Print list of all pokemon
-  -n NAME, --name NAME  Select pokemon by name. Generally spelled like in the games. a few exceptions are nidoran-f, nidoran-m, mr-mime, farfetchd, flabebe type-null etc.
-                        Perhaps grep the output of --list if in doubt.
+  -n NAME, --name NAME  Select pokemon by name. Generally spelled like in the games. a few exceptions are nidoran-f, nidoran-m, mr-mime, farfetchd,
+                        flabebe type-null etc. Perhaps grep the output of --list if in doubt.
+  -f FORM, --form FORM  Show an alternate form of a pokemon
   --no-title            Do not display pokemon name
   -s, --shiny           Show the shiny version of the pokemon instead
   -b, --big             Show a larger version of the sprite
   -r [RANDOM], --random [RANDOM]
-                        Show a random pokemon. This flag can optionally be followed by a generation number or range (1-8) to show random pokemon from a specific generation or range of generations.
-                        The generations can be provided as a continuous range (eg. 1-3) or as a list of generations (1,3,6)
+                        Show a random pokemon. This flag can optionally be followed by a generation number or range (1-8) to show random pokemon
+                        from a specific generation or range of generations. The generations can be provided as a continuous range (eg. 1-3) or as a
+                        list of generations (1,3,6)
 ```
 
 Example of printing out a specific pokemon
@@ -126,6 +128,10 @@ pokemon-colorscripts -r 1,3,6
 Example of printing out a larger sprite
 ```
 pokemon-colorscripts -n sphleal -b
+```
+Example of printing out an alternate form
+```
+pokemon-colorscripts -n deoxys --form defense
 ```
 Some pokemon with spaces or periods or other special characters in their name
 might not be spelled as expected, some examples include:

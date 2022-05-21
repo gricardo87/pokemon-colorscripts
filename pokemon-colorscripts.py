@@ -42,7 +42,7 @@ def list_pokemon_names() -> None:
 
 
 def show_pokemon_by_name(
-    name: str, show_title: bool, shiny: bool, is_large: bool
+    name: str, show_title: bool, shiny: bool, is_large: bool, form: str = ""
 ) -> None:
     base_path = COLORSCRIPTS_DIR
     color_subdir = SHINY_SUBDIR if shiny else REGULAR_SUBDIR
@@ -55,6 +55,23 @@ def show_pokemon_by_name(
         if name not in pokemon_names:
             print(f"Invalid pokemon {name}")
             sys.exit(1)
+
+        if form:
+            for pokemon in pokemon_json:
+                if pokemon["name"] == name:
+                    forms = pokemon["forms"]
+                    alternate_forms = [f for f in forms if f != "regular"]
+            if form in alternate_forms:
+                name += f"-{form}"
+            else:
+                print(f"Invalid form '{form}' for pokemon {name}")
+                if not alternate_forms:
+                    print(f"No alternate forms available for {name}")
+                else:
+                    print(f"Available alternate forms are")
+                    for form in alternate_forms:
+                        print(f"- {form}")
+                sys.exit(1)
     pokemon_file = f"{base_path}/{size_subdir}/{color_subdir}/{name}"
     if show_title:
         if shiny:
@@ -122,6 +139,12 @@ def main() -> None:
                 doubt.""",
     )
     parser.add_argument(
+        "-f",
+        "--form",
+        type=str,
+        help="Show an alternate form of a pokemon",
+    )
+    parser.add_argument(
         "--no-title", action="store_false", help="Do not display pokemon name"
     )
     parser.add_argument(
@@ -156,8 +179,11 @@ def main() -> None:
     if args.list:
         list_pokemon_names()
     elif args.name:
-        show_pokemon_by_name(args.name, args.no_title, args.shiny, args.big)
+        show_pokemon_by_name(args.name, args.no_title, args.shiny, args.big, args.form)
     elif args.random:
+        if args.form:
+            print("--form flag unexpected with --random")
+            sys.exit(1)
         show_random_pokemon(args.random, args.no_title, args.shiny, args.big)
     else:
         parser.print_help()
