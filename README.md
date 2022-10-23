@@ -22,9 +22,9 @@ Demo of the program running on terminal startup.
 ![demo of random pokemons on terminal spawn](./demo_images/poke_demo.gif)
 
 ### Screenshots
-![screenshot](./demo_images/demo_1.png)
-![screenshot](./demo_images/demo_2.png)
-![screenshot](./demo_images/demo_3.png)
+![screenshot](./demo_images/pokemon-colorscripts-screenshot-1.png)
+![screenshot](./demo_images/pokemon-colorscripts-screenshot-2.png)
+![screenshot](./demo_images/pokemon-colorscripts-screenshot-3.png)
 
 ## Requirements
 The program requires `python3` to run and a terminal with true color support,
