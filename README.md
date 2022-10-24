@@ -15,7 +15,7 @@ and alternate forms (okay it's still missing some female forms but cut me some s
 ### Demo GIFs
 Demo of the program being used
 
-![demo of program in action](./demo_images/colorscript-demo.gif)
+![demo of program in action](./demo_images/pokemon-colorscripts-demo.gif)
 
 Demo of the program running on terminal startup.
 
