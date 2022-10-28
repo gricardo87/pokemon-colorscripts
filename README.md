@@ -19,7 +19,7 @@ Demo of the program being used
 
 Demo of the program running on terminal startup.
 
-![demo of random pokemons on terminal spawn](./demo_images/poke_demo.gif)
+![demo of random pokemons on terminal spawn](./demo_images/terminal-startup-demo.gif)
 
 ### Screenshots
 ![screenshot](./demo_images/pokemon-colorscripts-screenshot-1.png)
